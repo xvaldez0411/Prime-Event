@@ -106,9 +106,13 @@ const logout = (e)=>{
 
 
             </div>
-            <div className='right-col'></div> 
+            <div className='right-col'>
+            {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
+            <label>Event Description</label>
+            <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
+            <button>Add Event</button>
+            </div> 
           </div>
-
         </form>
 
     </div>
