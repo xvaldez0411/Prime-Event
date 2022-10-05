@@ -11,10 +11,6 @@ const EventSchema = new mongoose.Schema({
         type:Date,
         required:[true, "Date is required"]
     },
-    time: {
-        type:String, //not sure if correct.....
-        required: [true, "Time for event is required"]
-    },
     location: {
         type:String, //not sure if correct.....
         required: [true, "Location of event is required"]
@@ -23,7 +19,7 @@ const EventSchema = new mongoose.Schema({
         type:String,
         required: [true, "Description of event is required"]
     },
-    createdBy: { //added for LR
+    createdBy: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     }
