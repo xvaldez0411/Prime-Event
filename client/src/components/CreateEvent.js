@@ -5,7 +5,7 @@ import {useNavigate, Link} from 'react-router-dom'
 const CreateEvent = () => {
 
   const [title, setTitle] = useState("")
-  const [date, setDate] = useState("")
+  const [date, setDate] = useState({})
   const [location, setLocation] = useState("")
   const [description, setDescription] = useState("")
   const [user, setUser] = useState({})
@@ -84,9 +84,9 @@ const logout = (e)=>{
   return (
     <div className='container'>
         <div className='top-bar'>
-            <h1>Create an event!</h1>
+            <h1>Welcome, {user.username}!</h1>
             <Link to = {'/home'}><button>Home</button></Link>
-            <Link to = {`/user/profile/${user.username}`}><button>{user.username}'s Profile</button></Link>
+            <Link to = {`/user/profile/${user.username}`}><button>Profile</button></Link>
             <button onClick={logout}>Logout</button>
         </div>
         <form onSubmit={submitHandle}>
