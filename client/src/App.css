@@ -1,3 +1,7 @@
+* {
+  font-family: cursive;
+}
+
 .container {
   margin: 0 auto;
   padding: 0;
@@ -119,5 +123,45 @@ button:hover {
   box-shadow: 2px 3px 5px gray;
 }
 
+.page-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.event-list {
+  align-items: center;
+  margin: auto;
+  box-shadow: 2px 3px 5px gray;
+  width: 750px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.table-head {
+  border: 2px solid black;
+  width: 200px;
+  box-shadow: 2px 3px 5px gray;
+  font-size: 20px;
+  background-color: goldenrod;
+}
+
+.table-content {
+  text-align: center;
+}
+
+.table-data {
+  box-shadow: 2px 3px 5px gray;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  text-decoration: none;
+  color: black;
+}
+
+.delete-btn {
+  margin-left: 10px;
+}
 
 
