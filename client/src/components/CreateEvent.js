@@ -82,40 +82,41 @@ const logout = (e)=>{
 
 
   return (
-    <div className='container'>
-        <div className='top-bar'>
-            <h1>Welcome, {user.username}!</h1>
-            <Link to = {'/home'}><button>Home</button></Link>
-            <Link to = {`/user/profile/${user.username}`}><button>Profile</button></Link>
-            <button onClick={logout}>Logout</button>
-        </div>
-        <h2 className='page-title'>Create Event</h2>
-        <form onSubmit={submitHandle}>
-          <div className='col'>
-            <div className='left-col'>
-              {errors.title? <p style={{color:'red'}}>{errors.title.message}</p>:null}
-              <label>Event Title</label>
-              <input type="text" value={title} onChange={titleHandle} />
-
-              {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
-              <label>Event Date</label>
-              <input type="datetime-local" value={date} onChange={dateHandle} />
-
-              {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
-              <label>Event Location</label>
-              <input type="text" value={location} onChange={locationHandle} />
-
-
-            </div>
-            <div className='right-col'>
-            {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
-            <label>Event Description</label>
-            <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
-            <button>Add Event</button>
-            </div> 
+    <div className='background' style={{backgroundImage:"url(https://images.pexels.com/photos/5804898/pexels-photo-5804898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)"}}>
+      <div className='container'>
+          <div className='top-bar'>
+              <h1>Welcome, {user.username}!</h1>
+              <Link to = {'/home'}><button>Home</button></Link>
+              <Link to = {`/user/profile/${user.username}`}><button>Profile</button></Link>
+              <button onClick={logout}>Logout</button>
           </div>
-        </form>
+          <h2 className='page-title'>Create Event</h2>
+          <form onSubmit={submitHandle}>
+            <div className='col'>
+              <div className='left-col'>
+                {errors.title? <p style={{color:'red'}}>{errors.title.message}</p>:null}
+                <label>Event Title</label>
+                <input type="text" value={title} onChange={titleHandle} />
 
+                {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
+                <label>Event Date</label>
+                <input type="datetime-local" value={date} onChange={dateHandle} />
+
+                {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
+                <label>Event Location</label>
+                <input type="text" value={location} onChange={locationHandle} />
+
+
+              </div>
+              <div className='right-col'>
+              {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
+              <label>Event Description</label>
+              <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
+              <button>Add Event</button>
+              </div> 
+            </div>
+          </form>
+      </div>
     </div>
   )
 }
