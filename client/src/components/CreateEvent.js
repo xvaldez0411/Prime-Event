@@ -8,8 +8,8 @@ const CreateEvent = () => {
   const [date, setDate] = useState({})
   const [location, setLocation] = useState("")
   const [description, setDescription] = useState("")
-  const [user, setUser] = useState({})
   const [errors,setErrors] = useState({})
+  const [user, setUser] = useState({})
 
   const navigate = useNavigate()
 

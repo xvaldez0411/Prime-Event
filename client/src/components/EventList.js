@@ -58,7 +58,7 @@ const EventList = () => {
     })
   }
 
-  const changeHandle = (key, oldValue) =>{
+  const changeHandle = (key, oldValue) =>{ //attempting to use this for join button to change to GOING
 
   }
   
@@ -87,7 +87,7 @@ const EventList = () => {
                   
                   {user._id === item.createdBy._id? 
                   <div>
-                  <button><Link to={`/api/v1/events/${item._id}`} className='edit-btn'>Edit</Link></button>
+                  <button><Link to={`/events/update/${item._id}`} className='edit-btn'>Edit</Link></button>
                   <button className='delete-btn' onClick={()=>deleteHandle(item._id)}>Delete</button>
                   </div>
                   :<button onClick={()=>changeHandle()}>Join</button>}
