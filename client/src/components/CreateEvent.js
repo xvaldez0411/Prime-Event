@@ -89,6 +89,7 @@ const logout = (e)=>{
             <Link to = {`/user/profile/${user.username}`}><button>Profile</button></Link>
             <button onClick={logout}>Logout</button>
         </div>
+        <h2 className='page-title'>Create Event</h2>
         <form onSubmit={submitHandle}>
           <div className='col'>
             <div className='left-col'>
