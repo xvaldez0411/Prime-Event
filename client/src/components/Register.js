@@ -48,14 +48,14 @@ const Register = (props) => {
     
   return (
     <div>
-
-        <h1 style={{textAlign: 'center'}}>Register</h1>
+        {/* <h1 style={{textAlign: 'center'}}>Register</h1> */}
         {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
         <form onSubmit={register} className='register-form'>
             <div>
-                <label>Username</label>
+                {/* <label>Username</label> */}
                 {errors.username ? (<span className='error-text'>{errors.username.message}</span>) : null}
                 <input
+                placeholder='Username'
                 type='text'
                 name='username'
                 value = {user.username}
@@ -63,9 +63,10 @@ const Register = (props) => {
                 />
             </div>
             <div>
-            <label>Email</label>
+            {/* <label>Email</label> */}
                 {errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}
                 <input
+                placeholder='Email Address'
                 type='email'
                 name='email'
                 value = {user.email}
@@ -73,9 +74,10 @@ const Register = (props) => {
                 />
             </div>
             <div>
-            <label>Password</label>
+            {/* <label>Password</label> */}
                 {errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}
                 <input
+                placeholder='Password'
                 type='password'
                 name='password'
                 value = {user.password}
@@ -83,9 +85,10 @@ const Register = (props) => {
                 />
             </div>
             <div>
-            <label>Confirm Password</label>
+            {/* <label>Confirm Password</label> */}
                 {errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}
                 <input
+                placeholder='Confirm Password'
                 type='password'
                 name='confirmPassword'
                 value = {user.confirmPassword}
@@ -93,7 +96,7 @@ const Register = (props) => {
                 />
             </div>
             <div>
-                <button>Register</button>
+                <button style={{backgroundColor:'#33CC00'}}>Register</button>
             </div>
         </form>
     </div>

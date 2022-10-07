@@ -34,12 +34,13 @@ const Login = (props) => {
 
   return (
     <div>
-        <h1 style={{textAlign: 'center'}}>Login</h1>
+        {/* <h1 style={{textAlign: 'center'}}>Login</h1> */}
         <p className='error-text'>{errorMessage ? errorMessage:""}</p>
         <form onSubmit={login} className='login-form'>
             <div>
-                <label>Email</label>
+                {/* <label>Email</label> */}
                 <input
+                placeholder='Email Address'
                 type="text"
                 name='email'
                 value={email}
@@ -47,8 +48,9 @@ const Login = (props) => {
                 />
             </div>
             <div>
-                <label>Password</label>
+                {/* <label>Password</label> */}
                 <input 
+                placeholder='Password'
                 type='password'
                 name='password'
                 value={password}
@@ -56,7 +58,7 @@ const Login = (props) => {
                 />
             </div>
             <div>
-                <button type='submit'>Sign in</button>
+                <button style={{backgroundColor:'#33CC00'}} type='submit'>Log in</button>
             </div>
         </form>
     </div>

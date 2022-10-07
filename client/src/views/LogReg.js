@@ -4,9 +4,10 @@ import Register from '../components/Register'
 
 const LogReg = () => {
   return (
-    <div className='container'>
+    <div className='container' style={{backgroundColor:'#D8D8D8', paddingTop:'100px'}}>
+      <p></p>
         <div className='logreg-topbar'>
-          <h1>Prime Event</h1>
+          <h1>Lets get started!</h1>
         </div>
         <div className='logreg'>
             <div className='login'>

@@ -91,7 +91,7 @@ const logout = (e)=>{
               <h1>Welcome, {user.username}!</h1>
               <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
               <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
-              <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+              <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
           </div>
           <h1 className='page-title'>Create Event</h1>
           <form onSubmit={submitHandle}>
