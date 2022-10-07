@@ -100,10 +100,14 @@ const UpdateEvent = () => {
     <div className='background' style={{backgroundImage:'url(https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
       <div className='container'>
         <div className='top-bar'>
-          <h1>Welcome, {user.username}!</h1>
+          <div className='top-bar-title'>
+          <h1>Welcome, {user.firstName}!</h1>
+          </div>
+          <div className='top-bar-btns'>
           <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-          <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
+          {/* <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link> */}
           <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+          </div>
         </div>
         <h1 className='page-title'>Update Event</h1>
           <form onSubmit={submitHandle}>

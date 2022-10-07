@@ -57,10 +57,14 @@ const ViewEvent = () => {
     <div className='background'>
         <div className='container'>
             <div className='top-bar'>
-                <h1>Welcome, {user.username}!</h1>
-                <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-                <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
-                <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+                <div className='top-bar-title'>
+                <h1>Welcome, {user.firstName}!</h1>
+                </div>
+                <div className='top-bar-btns'>
+                <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
+                {/* <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link> */}
+                <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+                </div>
             </div>
             <h2 style={{
                 textAlign:'center',     //add extra styling here ..

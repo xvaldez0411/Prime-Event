@@ -7,6 +7,8 @@ const Register = (props) => {
     const [errors, setErrors] = useState({})
 
     const [user, setUser] = useState({
+        firstName:"",
+        lastName:"",
         username: "",
         email: "",
         password: "",
@@ -31,6 +33,8 @@ const Register = (props) => {
         .then((res)=>{
             console.log(res.data)
             setUser({
+                firstName:"",
+                lastName:"",
                 username:"",
                 email:"",
                 password:"",
@@ -51,6 +55,28 @@ const Register = (props) => {
         {/* <h1 style={{textAlign: 'center'}}>Register</h1> */}
         {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
         <form onSubmit={register} className='register-form'>
+            <div>
+                {/* <label>Username</label> */}
+                {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}
+                <input
+                placeholder='First Name'
+                type='text'
+                name='firstName'
+                value = {user.firstName}
+                onChange={(e)=> handleChange(e)}
+                />
+            </div>
+            <div>
+                {/* <label>Username</label> */}
+                {errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}
+                <input
+                placeholder='Last Name'
+                type='text'
+                name='lastName'
+                value = {user.lastName}
+                onChange={(e)=> handleChange(e)}
+                />
+            </div>
             <div>
                 {/* <label>Username</label> */}
                 {errors.username ? (<span className='error-text'>{errors.username.message}</span>) : null}

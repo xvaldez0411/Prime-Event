@@ -84,10 +84,14 @@ const EventList = () => {
     <div className='background' style={{backgroundImage:'url(https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
       <div className='container'>
         <div className='top-bar'>
-          <h1>Welcome, {user.username}</h1>
+          <div className='top-bar-title'>
+          <h1>Welcome, {user.firstName}</h1>
+          </div>
+          <div className='top-bar-btns'>
           <Link to = {'/events/new'}><button>Create <img style={{height:'14px', width:'14px'}} src={createIcon}/></button></Link>
-          <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src={profileIcon}/></button></Link>
+          {/* <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src={profileIcon}/></button></Link> */}
           <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
+          </div>
         </div>
         <h1 className='page-title'>All Events</h1>
         <table className='event-list'>
@@ -110,7 +114,7 @@ const EventList = () => {
                     </div>
                     :
                     item.attending.some((person)=> person._id === user._id) ? 
-                    <button style={{backgroundColor:'#cc0000', color:'white'}} onClick={()=>attendHandle(item._id,'unjoin')}>Decline</button> : <button onClick={()=>attendHandle(item._id, 'join')}>Attend</button> 
+                    <button style={{backgroundColor:'#cc0000', color:'white'}} onClick={()=>attendHandle(item._id,'unjoin')}>Decline</button> : <button style={{backgroundColor:'#33CC00'}} onClick={()=>attendHandle(item._id, 'join')}>Attend</button> 
                     }
                   </td>
                 </tr>
