@@ -62,7 +62,7 @@ const ViewEvent = () => {
                 </div>
                 <div className='top-bar-btns'>
                 <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-                {/* <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link> */}
+                <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
                 <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
                 </div>
             </div>
@@ -76,7 +76,6 @@ const ViewEvent = () => {
                 </div>
                 <div className='view-right'>
                     <span>Event Location: {event.location}</span>
-                    <span>Hosted by: {event.createdBy}</span>
                 </div>
             </div>
         </div>

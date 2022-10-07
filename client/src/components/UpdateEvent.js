@@ -105,7 +105,7 @@ const UpdateEvent = () => {
           </div>
           <div className='top-bar-btns'>
           <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-          {/* <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link> */}
+          <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
           <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
           </div>
         </div>
