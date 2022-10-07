@@ -54,35 +54,33 @@ const Profile = () => {
     // }, [])
 
   return (
-    <div className='container' style={{
-      backgroundColor:"#e5e5f7",
-      backgroundImage:"radial-gradient( ellipse farthest-corner at 4px 4px , #838133, #838133 50%, #e5e5f7 50%)",
-      backgroundSize:"4px 4px"
-    }}>
-      <div className='top-bar'>
-        <div className='top-bar-title'>
-          <h1>{username}'s Profile</h1>
+    <div className='background' style={{backgroundImage:"url(https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)"}}>
+      <div className='container'>
+        <div className='top-bar'>
+          <div className='top-bar-title'>
+            <h1>{username}'s Profile</h1>
+          </div>
+          <div className='top-bar-btns'>
+            <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>
+            <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+          </div>
         </div>
-        <div className='top-bar-btns'>
-          <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>
-          <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+        <div className='mid-bar'>
+          <h3 style={{marginLeft:"20px"}}>Your current events</h3>
+          </div>
+        <div className='content'>
+            {
+              userEventList.map((item,index)=>{
+                return (
+                <div className='card' key={index}>
+                    <h3>Event Title: {item.title}</h3>
+                    <h3>Event Time: {item.date?formatInTimeZone(item.date,'America/Chicago','MM-dd-yyyy HH:mm'):null}</h3>
+                    <h3>Guests attending: {item.attending.length}</h3>
+                </div>
+                )
+              })
+            }
         </div>
-      </div>
-      <div className='mid-bar'>
-        <h3 style={{marginLeft:"20px"}}>Your current events</h3>
-        </div>
-      <div className='content'>
-          {
-            userEventList.map((item,index)=>{
-              return (
-              <div className='card' key={index}>
-                  <p>Event Title: {item.title}</p>
-                  <p>Event Time: {item.date?formatInTimeZone(item.date,'America/Chicago','MM-dd-yyyy HH:mm'):null}</p>
-                  <p>Guests attending: {item.attending.length}</p>
-              </div>
-              )
-            })
-          }
       </div>
     </div>
   )

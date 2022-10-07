@@ -220,4 +220,22 @@ button:hover {
   justify-content: space-between;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  box-shadow: 2px 3px 5px black;
+  background-color:rgb(245,245,245);
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
