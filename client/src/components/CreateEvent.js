@@ -95,8 +95,8 @@ const logout = (e)=>{
               <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
             </div>
           </div>
-          <div className='page-title'>
-          <h1>Create Event</h1>
+          <div className='mid-bar'>
+            <h3 style={{marginLeft:"20px"}}>Create Event</h3>
           </div>
           <form onSubmit={submitHandle}>
             <div className='col'>

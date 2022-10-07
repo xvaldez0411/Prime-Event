@@ -68,27 +68,21 @@ const Profile = () => {
           <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
         </div>
       </div>
+      <div className='mid-bar'>
+        <h3 style={{marginLeft:"20px"}}>Your current events</h3>
+        </div>
       <div className='content'>
-        <div className='profile-list'>
           {
             userEventList.map((item,index)=>{
               return (
               <div className='card' key={index}>
-                <div className='card-info'>
                   <p>Event Title: {item.title}</p>
                   <p>Event Time: {item.date?formatInTimeZone(item.date,'America/Chicago','MM-dd-yyyy HH:mm'):null}</p>
-                </div>
-                <div className='guest-count'>
                   <p>Guests attending: {item.attending.length}</p>
-                </div>
               </div>
               )
             })
           }
-        </div>
-        <div>
-        <video src={video1} width="600" height="300" autoPlay loop muted></video>
-        </div>
       </div>
     </div>
   )

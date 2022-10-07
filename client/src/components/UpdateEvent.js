@@ -107,7 +107,9 @@ const UpdateEvent = () => {
             <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
           </div>
         </div>
-        <h1 className='page-title'>Update Event</h1>
+        <div className='mid-bar'>
+          <h3 style={{marginLeft:"20px"}}>Update event</h3>
+        </div>
           <form onSubmit={submitHandle}>
             <div className='col'>
               <div className='left-col'>

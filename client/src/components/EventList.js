@@ -91,7 +91,9 @@ const EventList = () => {
             <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
           </div>
         </div>
-        <h1 className='page-title'>All Events</h1>
+        <div className='mid-bar'>
+        <h3 style={{marginLeft:"20px"}}>All Events</h3>
+        </div>
         <table className='event-list'>
           <thead>
             <tr>
