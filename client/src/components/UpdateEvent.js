@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useParams, useNavigate, Link} from 'react-router-dom'
-import homeIcon from '../homeIcon.png'
-import profileIcon from '../profileIcon.png'
 import logOutIcon from '../logOutIcon.png'
 
 const UpdateEvent = () => {
@@ -104,9 +102,9 @@ const UpdateEvent = () => {
           <h1>Welcome, {user.firstName}!</h1>
           </div>
           <div className='top-bar-btns'>
-          <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-          <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
-          <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+            <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>
+            <Link style={{color:"white", textDecoration:"none"}} to = {`/user/profile/${user.username}`}>Profile</Link>
+            <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
           </div>
         </div>
         <h1 className='page-title'>Update Event</h1>

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useParams, Link, useNavigate} from 'react-router-dom'
-import homeIcon from '../homeIcon.png'
 import logOutIcon from '../logOutIcon.png'
 import {formatInTimeZone, utcToZonedTime} from 'date-fns-tz'
-
+import video1 from '../video.mp4'
 
 const Profile = () => {
 
@@ -55,33 +54,41 @@ const Profile = () => {
     // }, [])
 
   return (
-    <div className='container'>
+    <div className='container' style={{
+      backgroundColor:"#e5e5f7",
+      backgroundImage:"radial-gradient( ellipse farthest-corner at 4px 4px , #838133, #838133 50%, #e5e5f7 50%)",
+      backgroundSize:"4px 4px"
+    }}>
       <div className='top-bar'>
         <div className='top-bar-title'>
           <h1>{username}'s Profile</h1>
         </div>
         <div className='top-bar-btns'>
-          <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
+          <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>
           <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
         </div>
       </div>
-      {/* <p>{JSON.stringify(userEventList)}</p> */}
-      <div className='profile-list'>
-        {
-          userEventList.map((item,index)=>{
-            return (
-            <div className='card' key={index}>
-              <div className='card-info'>
-                <h3>{item.title}</h3>
-                <h3>{item.date?formatInTimeZone(item.date,'America/Chicago','MM-dd-yyyy HH:mm'):null}</h3>
+      <div className='content'>
+        <div className='profile-list'>
+          {
+            userEventList.map((item,index)=>{
+              return (
+              <div className='card' key={index}>
+                <div className='card-info'>
+                  <p>Event Title: {item.title}</p>
+                  <p>Event Time: {item.date?formatInTimeZone(item.date,'America/Chicago','MM-dd-yyyy HH:mm'):null}</p>
+                </div>
+                <div className='guest-count'>
+                  <p>Guests attending: {item.attending.length}</p>
+                </div>
               </div>
-              <div className='guest-count'>
-                <h3>Guests attending: {item.attending.length}</h3>
-              </div>
-            </div>
-            )
-          })
-        }
+              )
+            })
+          }
+        </div>
+        <div>
+        <video src={video1} width="600" height="300" autoPlay loop muted></video>
+        </div>
       </div>
     </div>
   )

@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link, useNavigate} from 'react-router-dom'
-import homeIcon from '../homeIcon.png'
-import profileIcon from '../profileIcon.png'
 import logOutIcon from '../logOutIcon.png'
-import createIcon from '../createIcon.png'
+
 
 const EventList = () => {
 
@@ -88,9 +86,9 @@ const EventList = () => {
           <h1>Welcome, {user.firstName}</h1>
           </div>
           <div className='top-bar-btns'>
-          <Link to = {'/events/new'}><button>Create <img style={{height:'14px', width:'14px'}} src={createIcon}/></button></Link>
-          <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src={profileIcon}/></button></Link>
-          <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
+            <Link style={{color:"white", textDecoration:"none"}} to = {'/events/new'}>Create Event</Link>
+            <Link style={{color:"white", textDecoration:"none"}} to = {`/user/profile/${user.username}`}>Profile</Link>
+            <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
           </div>
         </div>
         <h1 className='page-title'>All Events</h1>

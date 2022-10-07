@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
-import homeIcon from '../homeIcon.png'
-import profileIcon from '../profileIcon.png'
 import logOutIcon from '../logOutIcon.png'
 
 const CreateEvent = () => {
@@ -92,8 +90,8 @@ const logout = (e)=>{
               <h1>Welcome, {user.firstName}!</h1>
             </div>
             <div className='top-bar-btns'>
-              <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-              <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
+              <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>
+              <Link style={{color:"white", textDecoration:"none"}} to = {`/user/profile/${user.username}`}>Profile</Link>
               <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
             </div>
           </div>
