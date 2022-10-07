@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import {formatInTimeZone, utcToZonedTime} from 'date-fns-tz'
 import {Link, useParams, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import homeIcon from '../homeIcon.png'
@@ -9,6 +10,7 @@ const ViewEvent = () => {
 
     const [event,setEvent] = useState("")
     const [user, setUser] = useState({})
+    const [newDate,setNewDate] = useState({}) // ??????????
 
     const {id} = useParams()
     const navigate = useNavigate()
@@ -52,15 +54,28 @@ const ViewEvent = () => {
   }, [])
 
   return (
-    <div className='container'>
-        <div className='top-bar'>
-        <h1>Welcome, {user.username}!</h1>
-              <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-              <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
-              <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+    <div className='background'>
+        <div className='container'>
+            <div className='top-bar'>
+                <h1>Welcome, {user.username}!</h1>
+                <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
+                <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
+                <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+            </div>
+            <h2 style={{
+                textAlign:'center',     //add extra styling here ..
+                }}>{event.title}</h2>
+            <div className='view-col'> 
+                <div className='view-left'>
+                    <p>Event Date & Time: {event.date?formatInTimeZone(event.date,'America/Chicago','yyyy-MM-dd HH:mm'):null}</p>
+                    <p>Event Description:{event.description}</p>
+                </div>
+                <div className='view-right'>
+                    <span>Event Location: {event.location}</span>
+                    <span>Hosted by: {event.createdBy}</span>
+                </div>
+            </div>
         </div>
-        <p>{event.title}</p>
-
     </div>
   )
 }

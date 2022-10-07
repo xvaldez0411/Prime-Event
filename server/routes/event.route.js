@@ -9,6 +9,9 @@ const routes = (app)=>{
 
     app.get('/api/v1/events/:id', EventController.getOne)
 
+    app.post('/api/v1/events/join/:id', EventController.join)
+    app.post('/api/v1/events/unjoin/:id', EventController.unjoin)
+
     app.put('/api/v1/events/:id', EventController.update)
 
     app.delete('/api/v1/events/:id', EventController.delete)

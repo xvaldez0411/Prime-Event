@@ -66,7 +66,7 @@ const logout = (e)=>{
 
     const event = {
       title,
-      date,
+      date:new Date(date),
       location,
       description
     }
@@ -89,11 +89,11 @@ const logout = (e)=>{
       <div className='container'>
           <div className='top-bar'>
               <h1>Welcome, {user.username}!</h1>
-              <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-              <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
+              <Link to = {'/home'}><button>Home <img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
+              <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
               <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
           </div>
-          <h2 className='page-title'>Create Event</h2>
+          <h1 className='page-title'>Create Event</h1>
           <form onSubmit={submitHandle}>
             <div className='col'>
               <div className='left-col'>

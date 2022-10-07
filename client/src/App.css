@@ -1,5 +1,5 @@
 * {
-  font-family: cursive;
+  font-family: Arial;
 }
 
 .background {
@@ -103,7 +103,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-radius: 2px;
+  border-radius: 10px;
   margin-bottom: 30px;
   background-color: rgba(255,255,255, .6);
 }
@@ -122,7 +122,7 @@ button:hover {
   padding: 20px;
   border-radius: 3px;
   box-shadow: 2px 3px 5px gray;
-  background-color:rgba(255,255,255, .6);
+  background-color:rgba(255,255,255, .8);
 }
 
 .left-col input {
@@ -138,7 +138,7 @@ button:hover {
   border-radius: 3px;
   box-shadow: 2px 3px 5px gray;
   height: 230px;
-  background-color:rgba(255,255,255, .6);
+  background-color:rgba(255,255,255, .8);
 }
 
 .page-title {
@@ -154,7 +154,7 @@ button:hover {
   width: 750px;
   padding: 20px;
   border-radius: 5px;
-  background-color: rgba(255,255,255, .6);
+  background-color: rgba(255,255,255, .8);
 }
 
 .table-head {
@@ -182,6 +182,23 @@ button:hover {
 
 .delete-btn {
   margin-left: 10px;
+}
+
+.view-col {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.view-left,
+.view-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.view-left {
+  justify-content: space-between;
 }
 
 

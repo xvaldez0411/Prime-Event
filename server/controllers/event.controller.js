@@ -26,7 +26,8 @@ const EventController = {
 
     getAll:(req,res)=>{
         Event.find({})
-        .populate("createdBy", "username email") 
+        .populate("createdBy", "username email")
+        .populate("attending", "-password")
         .then((events)=>{
             res.status(200).json({events:events})
         })
@@ -35,8 +36,31 @@ const EventController = {
         })
     },
 
+    join: (req,res)=>{
+        Event.findOneAndUpdate({_id:req.params.id}, {$push:{attending:req.body.user}},{new:true})
+        .populate("attending")
+        .then((event)=>{
+            res.status(200).json({updatedEvent:event})
+        })
+        .catch((err)=>{
+            res.status(400).json({message:"something went wrong updating event", error:err})
+        })
+    },
+
+    unjoin: (req,res)=>{
+        Event.findOneAndUpdate({_id:req.params.id}, {$pull:{attending:req.body.user}},{new:true})
+        .populate("attending")
+        .then((event)=>{
+            res.status(200).json({updatedEvent:event})
+        })
+        .catch((err)=>{
+            res.status(400).json({message:"something went wrong updating event", error:err})
+        })
+    },
+
     getOne:(req,res)=>{
         Event.findOne({_id:req.params.id})
+        .populate("attending")
         .then((event)=>{
             res.status(200).json({event:event})
         })

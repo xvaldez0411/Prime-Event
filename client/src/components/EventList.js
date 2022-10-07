@@ -10,7 +10,7 @@ const EventList = () => {
 
   const [eventList, setEventList] = useState([])
   const [user, setUser] = useState({})
-  const [isGoing, setIsGoing] = useState(false) // not sure about this ...
+  const [attending,setAttending] = useState([])
 
   const navigate = useNavigate()
 
@@ -62,18 +62,32 @@ const EventList = () => {
     })
   }
 
-  const changeHandle = (key, oldValue) =>{ //attempting to use this for join button to change to GOING
-
+  const attendHandle = (id, joinString) =>{ //attempting to use this for join button to change to GOING
+    axios.post(`http://localhost:8000/api/v1/events/${joinString}/${id}`, {user:user._id})
+    .then((res)=>{
+      console.log(res)
+      const newList = eventList.map((item, index)=>{
+        if(item._id === res.data.updatedEvent._id) {
+          item = {...res.data.updatedEvent}
+        }
+        return item
+      })
+      setEventList([...newList])
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   }
+
   
   return (
     <div className='background' style={{backgroundImage:'url(https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
       <div className='container'>
         <div className='top-bar'>
           <h1>Welcome, {user.username}</h1>
-          <Link to = {'/events/new'}><button><img style={{height:'14px', width:'14px'}} src={createIcon}/></button></Link>
-          <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src={profileIcon}/></button></Link>
-          <button onClick={logout}><img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
+          <Link to = {'/events/new'}><button>Create <img style={{height:'14px', width:'14px'}} src={createIcon}/></button></Link>
+          <Link to = {`/user/profile/${user.username}`}><button>Profile <img style={{height:'14px', width:'14px'}} src={profileIcon}/></button></Link>
+          <button onClick={logout}>Logout <img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
         </div>
         <h1 className='page-title'>All Events</h1>
         <table className='event-list'>
@@ -87,15 +101,17 @@ const EventList = () => {
             {
               eventList.map((item,index)=>(
                 <tr key={index} className='table-content'>
-                  <td className='table-data'><Link to = {'/events/:id'}>{item.title}</Link></td>
+                  <td className='table-data'><Link to = {`/events/${item._id}`}>{item.title}</Link></td>
                   <td className='table-data'>
-                    
                     {user._id === item.createdBy._id? 
                     <div>
                     <button><Link to={`/events/update/${item._id}`} className='edit-btn'>Edit</Link></button>
                     <button className='delete-btn' onClick={()=>deleteHandle(item._id)}>Delete</button>
                     </div>
-                    :<button onClick={()=>changeHandle()}>Join</button>}
+                    :
+                    item.attending.some((person)=> person._id === user._id) ? 
+                    <button style={{backgroundColor:'#cc0000', color:'white'}} onClick={()=>attendHandle(item._id,'unjoin')}>Decline</button> : <button onClick={()=>attendHandle(item._id, 'join')}>Attend</button> 
+                    }
                   </td>
                 </tr>
               ))

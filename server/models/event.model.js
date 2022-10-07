@@ -19,6 +19,10 @@ const EventSchema = new mongoose.Schema({
         type:String,
         required: [true, "Description of event is required"]
     },
+    attending: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
     createdBy: { 
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"

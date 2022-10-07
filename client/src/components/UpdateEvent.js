@@ -97,40 +97,41 @@ const UpdateEvent = () => {
   }
 
   return (
-    <div className='container'>
-      <div className='top-bar'>
-        <h1>Welcome, {user.username}!</h1>
-        <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
-        <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
-        <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
-      </div>
-      <h2 className='page-title'>Update Event</h2>
-        <form onSubmit={submitHandle}>
-          <div className='col'>
-            <div className='left-col'>
-              {errors.title? <p style={{color:'red'}}>{errors.title.message}</p>:null}
-              <label>Event Title</label>
-              <input type="text" value={title} onChange={titleHandle} />
+    <div className='background' style={{backgroundImage:'url(https://images.pexels.com/photos/1395964/pexels-photo-1395964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)'}}>
+      <div className='container'>
+        <div className='top-bar'>
+          <h1>Welcome, {user.username}!</h1>
+          <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
+          <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
+          <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
+        </div>
+        <h1 className='page-title'>Update Event</h1>
+          <form onSubmit={submitHandle}>
+            <div className='col'>
+              <div className='left-col'>
+                {errors.title? <p style={{color:'red'}}>{errors.title.message}</p>:null}
+                <label style={{fontWeight:'bold'}}>Event Title</label>
+                <input type="text" value={title} onChange={titleHandle} />
 
-              {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
-              <label>Event Date</label>
-              <input type="datetime-local" value={date} onChange={dateHandle} />
+                {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
+                <label style={{fontWeight:'bold'}}>Event Date</label>
+                <input type="datetime-local" value={date} onChange={dateHandle} />
 
-              {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
-              <label>Event Location</label>
-              <input type="text" value={location} onChange={locationHandle} />
+                {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
+                <label style={{fontWeight:'bold'}}>Event Location</label>
+                <input type="text" value={location} onChange={locationHandle} />
 
 
+              </div>
+              <div className='right-col'>
+              {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
+              <label style={{fontWeight:'bold'}}>Event Description</label>
+              <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
+              <button>Update Event</button>
+              </div> 
             </div>
-            <div className='right-col'>
-            {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
-            <label>Event Description</label>
-            <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
-            <button>Update Event</button>
-            </div> 
-          </div>
-        </form>
-
+          </form>
+      </div>
     </div>
   )
 }
