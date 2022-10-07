@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useNavigate, Link} from 'react-router-dom'
+import homeIcon from '../homeIcon.png'
+import profileIcon from '../profileIcon.png'
+import logOutIcon from '../logOutIcon.png'
 
 const CreateEvent = () => {
 
@@ -31,7 +34,7 @@ const logout = (e)=>{
   .then((res)=>{
       console.log(res)
       console.log(res.data)
-      navigate("/")
+      navigate("/login")
   })
   .catch((err)=>{
       console.log(err)
@@ -86,9 +89,9 @@ const logout = (e)=>{
       <div className='container'>
           <div className='top-bar'>
               <h1>Welcome, {user.username}!</h1>
-              <Link to = {'/home'}><button>Home</button></Link>
-              <Link to = {`/user/profile/${user.username}`}><button>Profile</button></Link>
-              <button onClick={logout}>Logout</button>
+              <Link to = {'/home'}><button><img style={{height:'14px', width:'14px'}} src={homeIcon}/></button></Link>
+              <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src = {profileIcon}/></button></Link>
+              <button onClick={logout}><img style={{height:'14px', width:'14px'}} src = {logOutIcon}/></button>
           </div>
           <h2 className='page-title'>Create Event</h2>
           <form onSubmit={submitHandle}>

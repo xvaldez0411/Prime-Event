@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route element = {<LogReg/>} path = "/" />
+          <Route element = {<LogReg/>} path = "/login" />
           <Route element = {<EventList/>} path = "/home" />
           <Route element = {<CreateEvent/>} path = "events/new" />
           <Route element = {<Profile/>} path = "/user/profile/:username" />

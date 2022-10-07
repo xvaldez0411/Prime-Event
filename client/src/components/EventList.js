@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link, useNavigate} from 'react-router-dom'
+import homeIcon from '../homeIcon.png'
+import profileIcon from '../profileIcon.png'
+import logOutIcon from '../logOutIcon.png'
+import createIcon from '../createIcon.png'
 
 const EventList = () => {
 
@@ -28,7 +32,7 @@ const EventList = () => {
     .then((res)=>{
         console.log(res)
         console.log(res.data)
-        navigate("/")
+        navigate("/login")
     })
     .catch((err)=>{
         console.log(err)
@@ -67,9 +71,9 @@ const EventList = () => {
       <div className='container'>
         <div className='top-bar'>
           <h1>Welcome, {user.username}</h1>
-          <Link to = {'/events/new'}><button>Create Event</button></Link>
-          <Link to = {`/user/profile/${user.username}`}><button>Profile</button></Link>
-          <button onClick={logout}>Logout</button>
+          <Link to = {'/events/new'}><button><img style={{height:'14px', width:'14px'}} src={createIcon}/></button></Link>
+          <Link to = {`/user/profile/${user.username}`}><button><img style={{height:'14px', width:'14px'}} src={profileIcon}/></button></Link>
+          <button onClick={logout}><img style={{height:'14px', width:'14px'}} src={logOutIcon}/></button>
         </div>
         <h1 className='page-title'>All Events</h1>
         <table className='event-list'>
