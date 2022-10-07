@@ -106,8 +106,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* border-radius: 10px; */
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background-color: rgba(255,255,255, .6);
 }
 
@@ -146,8 +145,13 @@ button:hover {
 
 .page-title {
   text-align: center;
+  margin: auto;
   margin-bottom: 50px;
-  color: white;
+  color: black;
+  background-color:rgba(255,255,255, .7);
+  box-shadow: 2px 3px 5px gray;
+  width: 200px;
+  border-radius: 5px;
 }
 
 .event-list {
