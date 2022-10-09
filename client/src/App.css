@@ -57,7 +57,7 @@
   margin-bottom: 20px;
 }
 
-label {
+/* label {
   margin-right: 10px;
 }
 
@@ -66,16 +66,16 @@ input {
   border-radius: 8px;
   box-shadow: 2px 2px 2px black;
   background-color: rgb(221, 239, 239);
-}
+} */
 
-textarea {
+/* textarea {
   padding: 5px;
   border-radius: 8px;
   box-shadow: 2px 2px 2px black;
   background-color: rgb(221, 239, 239);
   margin-bottom: 20px;
   border: 2px solid black;
-}
+} */
 
 button {
   padding: 5px;
@@ -153,8 +153,8 @@ button:hover {
   justify-content: space-between;
   padding: 30px;
   border-radius: 3px;
-  box-shadow: 2px 3px 5px gray;
   height: 208px;
+  box-shadow: 2px 3px 5px gray;
   background-color:rgba(255,255,255, .8);
 }
 
@@ -239,3 +239,48 @@ button:hover {
   padding-bottom: 10px;
 }
 
+.form-container {
+  box-shadow: 2px 3px 5px gray;
+  border-radius: 8px;
+  background-color:rgba(255,255,255, .9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  padding: 40px;
+  width: 800px;
+}
+
+.form-top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-mid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.form-bottom {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-top input,
+.form-mid input {
+  padding: 20px;
+  font-size: 20px;
+  background-color: rgb(232,232,232);
+}
+
+.form-bottom textarea {
+  font-size: 20px;
+  background-color: rgb(232,232,232);
+}

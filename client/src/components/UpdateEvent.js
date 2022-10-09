@@ -110,31 +110,36 @@ const UpdateEvent = () => {
         <div className='mid-bar'>
           <h3 style={{marginLeft:"20px"}}>Update event</h3>
         </div>
-          <form onSubmit={submitHandle}>
-            <div className='col'>
-              <div className='left-col'>
+        <div className='form-container'>
+            <form onSubmit={submitHandle}>
+              <div className='form-top'>
                 {errors.title? <p style={{color:'red'}}>{errors.title.message}</p>:null}
-                <label style={{fontWeight:'bold'}}>Event Title</label>
+                <label>Event Title</label>
                 <input type="text" value={title} onChange={titleHandle} />
-
-                {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
-                <label style={{fontWeight:'bold'}}>Event Date</label>
-                <input type="datetime-local" value={date} onChange={dateHandle} />
-
-                {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
-                <label style={{fontWeight:'bold'}}>Event Location</label>
-                <input type="text" value={location} onChange={locationHandle} />
-
-
               </div>
-              <div className='right-col'>
+              <div className='form-mid'>
+                <div>
+                  {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
+                  <label>Event Date</label>
+                  <input type="datetime-local" value={date} onChange={dateHandle} />
+                </div>
+                <div>
+                  {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
+                  <label>Event Location</label>
+                  <input type="text" value={location} onChange={locationHandle} />
+                </div>
+              </div>
+              <div className='form-bottom'>
               {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
-              <label style={{fontWeight:'bold'}}>Event Description</label>
+              <label>Event Description</label>
               <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
-              <button>Update Event</button>
-              </div> 
-            </div>
-          </form>
+              </div>
+              <div className='form-btn'>
+              <button>Update event</button>
+              </div>
+
+            </form>
+          </div>
       </div>
     </div>
   )

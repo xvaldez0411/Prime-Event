@@ -83,7 +83,11 @@ const logout = (e)=>{
 
 
   return (
-    <div className='background' style={{backgroundImage:"url(https://images.pexels.com/photos/5804898/pexels-photo-5804898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)"}}>
+    <div className='background' style={{
+      backgroundColor: '#e8e8e9',
+      opacity: '1',
+      backgroundImage: 'repeating-radial-gradient( circle at 0 0, transparent 0, #e8e8e9 4px ), repeating-linear-gradient( #6d6b3355, #6d6b33 )',
+    }}>
       <div className='container'>
           <div className='top-bar'>
             <div className='top-bar-title'>
@@ -98,31 +102,37 @@ const logout = (e)=>{
           <div className='mid-bar'>
             <h3 style={{marginLeft:"20px"}}>Create Event</h3>
           </div>
-          <form onSubmit={submitHandle}>
-            <div className='col'>
-              <div className='left-col'>
+          <div className='form-container'>
+            <h4 style={{fontStyle:'italic'}}>Let's create an event! Invite your friends, family or even that weird guy from the office!</h4>
+            <form onSubmit={submitHandle}>
+              <div className='form-top'>
                 {errors.title? <p style={{color:'red'}}>{errors.title.message}</p>:null}
                 <label>Event Title</label>
                 <input type="text" value={title} onChange={titleHandle} />
-
-                {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
-                <label>Event Date</label>
-                <input type="datetime-local" value={date} onChange={dateHandle} />
-
-                {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
-                <label>Event Location</label>
-                <input type="text" value={location} onChange={locationHandle} />
-
-
               </div>
-              <div className='right-col'>
+              <div className='form-mid'>
+                <div>
+                  {errors.date? <p style={{color:'red'}}>{errors.date.message}</p>:null}
+                  <label>Event Date</label>
+                  <input type="datetime-local" value={date} onChange={dateHandle} />
+                </div>
+                <div>
+                  {errors.location? <p style={{color:'red'}}>{errors.location.message}</p>:null}
+                  <label>Event Location</label>
+                  <input type="text" value={location} onChange={locationHandle} />
+                </div>
+              </div>
+              <div className='form-bottom'>
               {errors.description? <p style={{color:'red'}}>{errors.description.message}</p>:null}
               <label>Event Description</label>
               <textarea value={description} rows="5" cols="40" onChange={descHandle}></textarea>
+              </div>
+              <div className='form-btn'>
               <button>Add Event</button>
-              </div> 
-            </div>
-          </form>
+              </div>
+
+            </form>
+          </div>
       </div>
     </div>
   )
