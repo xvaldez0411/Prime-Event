@@ -55,6 +55,7 @@ const Register = (props) => {
         {/* <h1 style={{textAlign: 'center'}}>Register</h1> */}
         {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
         <form onSubmit={register} className='register-form'>
+        <label style={{marginBottom: '15px'}}>Register</label>
             <div>
                 {/* <label>Username</label> */}
                 {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}

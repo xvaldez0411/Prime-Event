@@ -6,6 +6,7 @@ import CreateEvent from './components/CreateEvent';
 import Profile from './components/Profile';
 import UpdateEvent from './components/UpdateEvent';
 import ViewEvent from './components/ViewEvent';
+import LandingPage from './components/LandingPage';
 
 
 
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route element = {<LandingPage/>} path = "/" />
           <Route element = {<LogReg/>} path = "/login" />
           <Route element = {<EventList/>} path = "/home" />
           <Route element = {<CreateEvent/>} path = "events/new" />

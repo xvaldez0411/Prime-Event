@@ -37,6 +37,7 @@ const Login = (props) => {
         {/* <h1 style={{textAlign: 'center'}}>Login</h1> */}
         <p className='error-text'>{errorMessage ? errorMessage:""}</p>
         <form onSubmit={login} className='login-form'>
+            <label style={{marginBottom: '15px'}}>Login</label>
             <div>
                 {/* <label>Email</label> */}
                 <input

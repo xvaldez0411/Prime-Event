@@ -58,7 +58,7 @@ const Profile = () => {
       <div className='container'>
         <div className='top-bar'>
           <div className='top-bar-title'>
-            <h1>{username}'s Profile</h1>
+            <h1 className='font-link'>{username}'s Profile</h1>
           </div>
           <div className='top-bar-btns'>
             <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>

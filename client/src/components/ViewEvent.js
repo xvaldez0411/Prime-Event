@@ -52,11 +52,14 @@ const ViewEvent = () => {
   }, [])
 
   return (
-    <div className='background'>
+    <div className='background' style={{
+        backgroundColor:'rgb(80,80,80)',
+        color:'#DCDCDC'
+        }}>
         <div className='container'>
             <div className='top-bar'>
                 <div className='top-bar-title'>
-                <h1>Welcome, {user.firstName}!</h1>
+                <h1 className='font-link'>Welcome, {user.firstName}</h1>
                 </div>
                 <div className='top-bar-btns'>
                     <Link style={{color:"white", textDecoration:"none"}} to = {'/home'}>Home</Link>
@@ -65,7 +68,8 @@ const ViewEvent = () => {
                 </div>
             </div>
             <h2 style={{
-                textAlign:'center',     //add extra styling here ..
+                textAlign:'center',
+                fontStyle:'italic'     //add extra styling here ..
                 }}>{event.title}</h2>
             <div className='view-col'> 
                 <div className='view-left'>

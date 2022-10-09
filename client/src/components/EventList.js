@@ -83,7 +83,7 @@ const EventList = () => {
       <div className='container'>
         <div className='top-bar'>
           <div className='top-bar-title'>
-          <h1>Welcome, {user.firstName}</h1>
+          <h1 className='font-link'>Welcome, {user.firstName}</h1>
           </div>
           <div className='top-bar-btns'>
             <Link style={{color:"white", textDecoration:"none"}} to = {'/events/new'}>Create Event</Link>
