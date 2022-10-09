@@ -35,7 +35,7 @@ const Profile = () => {
         .then((res)=>{
             // console.log(res)
             // console.log(res.data)
-            navigate("/login")
+            navigate("/")
         })
         .catch((err)=>{
             console.log(err)
