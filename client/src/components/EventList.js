@@ -105,7 +105,8 @@ const EventList = () => {
             {
               eventList.map((item,index)=>(
                 <tr key={index} className='table-content'>
-                  <td className='table-data'><Link to = {`/events/${item._id}`}>{item.title}</Link></td>
+                  <td className='table-data'><Link to = {`/events/${item._id}`}>{item.title}</Link><p>Hosted by: {item.createdBy.username}</p>
+                  </td>
                   <td className='table-data'>
                     {user._id === item.createdBy._id? 
                     <div>
@@ -114,7 +115,11 @@ const EventList = () => {
                     </div>
                     :
                     item.attending.some((person)=> person._id === user._id) ? 
-                    <button style={{backgroundColor:'rgb(152,0,0)', color:'white'}} onClick={()=>attendHandle(item._id,'unjoin')}>Decline</button> : <button style={{backgroundColor:'#006600', color:'white'}} onClick={()=>attendHandle(item._id, 'join')}>Attend</button> 
+                    <button style={{backgroundColor:'rgb(152,0,0)', color:'white'}} 
+                    onClick={()=>attendHandle(item._id,'unjoin')}>Decline</button> 
+                    : 
+                    <button style={{backgroundColor:'#006600', color:'white'}} 
+                    onClick={()=>attendHandle(item._id, 'join')}>Attend</button> 
                     }
                   </td>
                 </tr>

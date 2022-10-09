@@ -38,7 +38,8 @@ const EventController = {
 
     join: (req,res)=>{
         Event.findOneAndUpdate({_id:req.params.id}, {$push:{attending:req.body.user}},{new:true})
-        .populate("attending")
+        .populate("createdBy", "username email")
+        .populate("attending", "-password")
         .then((event)=>{
             res.status(200).json({updatedEvent:event})
         })
@@ -49,7 +50,8 @@ const EventController = {
 
     unjoin: (req,res)=>{
         Event.findOneAndUpdate({_id:req.params.id}, {$pull:{attending:req.body.user}},{new:true})
-        .populate("attending")
+        .populate("createdBy", "username email")
+        .populate("attending", "-password")
         .then((event)=>{
             res.status(200).json({updatedEvent:event})
         })
@@ -60,7 +62,8 @@ const EventController = {
 
     getOne:(req,res)=>{
         Event.findOne({_id:req.params.id})
-        .populate("attending")
+        .populate("createdBy", "username email")
+        .populate("attending", "-password")
         .then((event)=>{
             res.status(200).json({event:event})
         })
@@ -92,7 +95,7 @@ const EventController = {
     findAllEventsByUser: (req,res)=>{
         if(req.jwtpayload.username !== req.params.username){
             console.log("Not the user")
-            User.findOne({username: req.params.username})
+            User.findOne({username: req.params.username})    //maybe populate ..
                 .then((userNotLoggedIn)=>{
                     Event.find({createdBy: userNotLoggedIn._id})
                     .poplulate("createdBy", "username")
