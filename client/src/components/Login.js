@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Login = (props) => {
 
@@ -39,8 +43,8 @@ const Login = (props) => {
         <form onSubmit={login} className='login-form'>
             <label style={{marginBottom: '15px'}}>Login</label>
             <div>
-                {/* <label>Email</label> */}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Email Address'
                 type="text"
                 name='email'
@@ -49,8 +53,8 @@ const Login = (props) => {
                 />
             </div>
             <div>
-                {/* <label>Password</label> */}
                 <input 
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Password'
                 type='password'
                 name='password'
@@ -59,7 +63,7 @@ const Login = (props) => {
                 />
             </div>
             <div>
-                <button style={{backgroundColor:'#33CC00'}} type='submit'>Log in</button>
+                <button style={{backgroundColor:'#1E90FF', width:'100px', height:'40px', fontSize:'20px', color:'white'}} type='submit'>Log in</button>
             </div>
         </form>
     </div>

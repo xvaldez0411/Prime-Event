@@ -60,6 +60,7 @@ const Register = (props) => {
                 {/* <label>Username</label> */}
                 {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='First Name'
                 type='text'
                 name='firstName'
@@ -71,6 +72,7 @@ const Register = (props) => {
                 {/* <label>Username</label> */}
                 {errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Last Name'
                 type='text'
                 name='lastName'
@@ -82,6 +84,7 @@ const Register = (props) => {
                 {/* <label>Username</label> */}
                 {errors.username ? (<span className='error-text'>{errors.username.message}</span>) : null}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Username'
                 type='text'
                 name='username'
@@ -93,6 +96,7 @@ const Register = (props) => {
             {/* <label>Email</label> */}
                 {errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Email Address'
                 type='email'
                 name='email'
@@ -104,6 +108,7 @@ const Register = (props) => {
             {/* <label>Password</label> */}
                 {errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Password'
                 type='password'
                 name='password'
@@ -115,6 +120,7 @@ const Register = (props) => {
             {/* <label>Confirm Password</label> */}
                 {errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}
                 <input
+                style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Confirm Password'
                 type='password'
                 name='confirmPassword'
@@ -123,7 +129,7 @@ const Register = (props) => {
                 />
             </div>
             <div>
-                <button style={{backgroundColor:'#33CC00'}}>Register</button>
+                <button style={{backgroundColor:'#1E90FF', width:'100px', height:'40px', fontSize:'20px', color:'white'}}>Register</button>
             </div>
         </form>
     </div>
