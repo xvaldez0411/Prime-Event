@@ -53,8 +53,8 @@ const ViewEvent = () => {
 
   return (
     <div className='background' style={{
-        backgroundColor:'rgb(80,80,80)',
-        color:'#DCDCDC'
+        backgroundColor:'#F0FFFF',
+        color:'black'
         }}>
         <div className='container'>
             <div className='top-bar'>
@@ -69,15 +69,17 @@ const ViewEvent = () => {
             </div>
             <h2 style={{
                 textAlign:'center',
+                marginBottom:'50px',
                 fontStyle:'italic'     //add extra styling here ..
                 }}>{event.title}</h2>
-            <div className='view-col'> 
+            <div className='view-col' style={{width:'300px'}}> 
                 <div className='view-left'>
-                    <p>Event Date & Time: {event.date?formatInTimeZone(event.date,'America/Chicago','yyyy-MM-dd HH:mm'):null}</p>
-                    <p>Event Description:{event.description}</p>
-                </div>
-                <div className='view-right'>
-                    <span>Event Location: {event.location}</span>
+                    <p style={{fontWeight:'bold'}}>Event Date & Time:</p>
+                    <p>{event.date?formatInTimeZone(event.date,'America/Chicago','MM-dd-yyyy HH:mm'):null}</p>
+                    <p style={{fontWeight:'bold'}}>Event Description:</p>
+                    <p style={{wordWrap:'break-word'}}>{event.description}</p>
+                    <p style={{fontWeight:'bold'}}>Event Location:</p>
+                    <p>{event.location}</p>
                 </div>
             </div>
         </div>
