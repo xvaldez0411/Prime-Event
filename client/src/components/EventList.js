@@ -60,7 +60,7 @@ const EventList = () => {
     })
   }
 
-  const attendHandle = (id, joinString) =>{ //attempting to use this for join button to change to GOING
+  const attendHandle = (id, joinString) =>{ 
     axios.post(`http://localhost:8000/api/v1/events/${joinString}/${id}`, {user:user._id})
     .then((res)=>{
       console.log(res)

@@ -56,9 +56,11 @@ const Register = (props) => {
         {confirmReg ? <h4 style={{color: 'green'}}>{confirmReg}</h4> : null}
         <form onSubmit={register} className='register-form'>
         <label style={{marginBottom: '15px'}}>Register</label>
+        {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}
+
             <div>
                 {/* <label>Username</label> */}
-                {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null}
+                {/* {errors.firstName ? (<span className='error-text'>{errors.firstName.message}</span>) : null} */}
                 <input
                 style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='First Name'
@@ -68,9 +70,10 @@ const Register = (props) => {
                 onChange={(e)=> handleChange(e)}
                 />
             </div>
+            {errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}
+
             <div>
                 {/* <label>Username</label> */}
-                {errors.lastName ? (<span className='error-text'>{errors.lastName.message}</span>) : null}
                 <input
                 style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Last Name'
@@ -80,9 +83,10 @@ const Register = (props) => {
                 onChange={(e)=> handleChange(e)}
                 />
             </div>
+            {errors.username ? (<span className='error-text'>{errors.username.message}</span>) : null}
+
             <div>
                 {/* <label>Username</label> */}
-                {errors.username ? (<span className='error-text'>{errors.username.message}</span>) : null}
                 <input
                 style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Username'
@@ -92,9 +96,10 @@ const Register = (props) => {
                 onChange={(e)=> handleChange(e)}
                 />
             </div>
+            {errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}
+
             <div>
             {/* <label>Email</label> */}
-                {errors.email ? (<span className='error-text'>{errors.email.message}</span>) : null}
                 <input
                 style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Email Address'
@@ -104,9 +109,10 @@ const Register = (props) => {
                 onChange={(e)=> handleChange(e)}
                 />
             </div>
+            {errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}
+
             <div>
             {/* <label>Password</label> */}
-                {errors.password ? (<span className='error-text'>{errors.password.message}</span>) : null}
                 <input
                 style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Password'
@@ -116,9 +122,10 @@ const Register = (props) => {
                 onChange={(e)=> handleChange(e)}
                 />
             </div>
+            {errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}
+
             <div>
             {/* <label>Confirm Password</label> */}
-                {errors.confirmPassword ? (<span className='error-text'>{errors.confirmPassword.message}</span>) : null}
                 <input
                 style={{padding:'10px', border:'none', width:'300px', height:'20px', borderRadius:'5px'}}
                 placeholder='Confirm Password'
